@@ -7,7 +7,7 @@ function QueryToAsync<T, K = any>(sql: string, values?: K): Promise<T> {
     const options = {
       sql,
       values,
-      timeout: 4000
+      timeout: 90000
     } as QueryOptions
 
     db_mysql.query(options, function (error, results, fields) {
