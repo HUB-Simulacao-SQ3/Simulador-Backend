@@ -27,7 +27,7 @@
 ![screenshot](https://raw.githubusercontent.com/Olafi-MooN/medsim-backend/main/public/img/ArquiteturaMVC.jpg)
 
 
-## How To Use
+## Como usar
 
 Para clonar essa aplicação você precisa do [Git](https://git-scm.com) e [Node.js](https://nodejs.org/en/download/) instalado no seu computador. Execute os seguintes comandos:
 
@@ -45,7 +45,7 @@ $ npm install
 $ npm run dev
 ```
 
-## Credits
+## Créditos
 
 This software uses the following open source packages:
 
@@ -53,12 +53,11 @@ This software uses the following open source packages:
 - [Node.js](https://nodejs.org/)
 - [Mysql]()
 
-## You may also like...
+## Você pode querer visualizar...
 
-- [Pomolectron](https://github.com/amitmerchant1990/pomolectron) - A pomodoro app
-- [Correo](https://github.com/amitmerchant1990/correo) - A menubar/taskbar Gmail App for Windows and macOS
+- [Medsim-frontend](https://github.com/Olafi-MooN/face-matching-frontend) - Aplicação frontend do Medsim
 
-## License
+## Licença
 
 MIT
 
