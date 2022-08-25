@@ -23,7 +23,7 @@ class Quiz extends Entity<IQuizType> {
   }
 
   static create(props: IQuizType, id?: string) {
-    const isEmpty = isValuesEmptyInObject(props, ['id']);
+    const isEmpty = isValuesEmptyInObject(props, ['id', 'file']);
     if(isEmpty.isNull) throw new Error(`Values ​​cannot be empty: ${isEmpty.values.join(' ')}`);
     const quiz = new Quiz(props, id).props;
     return quiz;

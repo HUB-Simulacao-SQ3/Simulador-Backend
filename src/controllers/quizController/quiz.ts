@@ -21,6 +21,11 @@ const updateQuizController = async (req: Request, res: Response) => {
   return res.status(200).json(response);
 }
 
+const getQuizCaseController = async (req: Request, res: Response) => {
+  const response = await QuizService.getAllQuizCaseQuery(req.params.id);
+  return res.status(200).json(response);
+}
+
 const deleteQuizController = async (req: Request, res: Response) => {
   const { id } = req.params;
   const response = await QuizService.deleteQuizQuery(id);
@@ -31,5 +36,6 @@ export {
   getAllQuizsController,
   insertQuizController,
   updateQuizController,
-  deleteQuizController
+  deleteQuizController,
+  getQuizCaseController
 };

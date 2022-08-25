@@ -1,10 +1,11 @@
-import { getAllQuizsQuery, insertQuizQuery, updateQuizQuery, deleteQuizQuery } from "./quiz.service"
+import { getAllQuizsQuery, insertQuizQuery, updateQuizQuery, deleteQuizQuery, getAllQuizCaseQuery } from "./quiz.service"
 
 
 const QuizService = {
-  getAllQuizsQuery, 
-  insertQuizQuery, 
-  updateQuizQuery, 
-  deleteQuizQuery
+  getAllQuizsQuery,
+  insertQuizQuery,
+  updateQuizQuery,
+  deleteQuizQuery,
+  getAllQuizCaseQuery
 }
 export { QuizService }
