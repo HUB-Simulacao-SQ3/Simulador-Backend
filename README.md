@@ -24,7 +24,7 @@
   <a href="#license">Licença</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/Olafi-MooN/medsim-backend/public/img/ArquiteturaMVC.jpg)
+![screenshot](https://raw.githubusercontent.com/Olafi-MooN/medsim-backend/main/public/img/ArquiteturaMVC.jpg)
 
 
 ## How To Use
