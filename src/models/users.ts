@@ -27,4 +27,4 @@ class User extends Entity<IUsersType> {
 }
 
 export { User };
-export type { IUsersType };
+export type { IUsersType, UsersTypeEnum };
