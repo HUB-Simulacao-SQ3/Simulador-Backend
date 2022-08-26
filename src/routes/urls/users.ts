@@ -3,30 +3,36 @@ import { getAllUsersController, insertUserController, updateUserController, dele
 
 
 module.exports = (routes: Router) => {
-  routes.get('/users', () => {
+  routes.get('/users', (req, res, next) => {
     /**  
       #swagger.tags = ['Users']
       #swagger.responses[0] = {
         schema: { $ref: '#/definitions/user' }
       }
     */
+    next();
   }, getAllUsersController);
 
-  routes.post('/user', () => {
+  routes.post('/user', (req, res, next) => {
     /**  
       #swagger.tags = ['Users']
       #swagger.parameters['user'] = { 
         in: 'body', schema: { $ref: '#/definitions/user' } }
-    */ }, insertUserController);
+    */
+    next();
+  }, insertUserController);
 
-  routes.put('/user', () => {
+  routes.put('/user', (req, res, next) => {
     /**  
         #swagger.tags = ['Users'] 
         #swagger.parameters['user'] = { 
           in: 'body', schema: { $ref: '#/definitions/userUpdate' } }
-    */ }, updateUserController);
+    */
+    next();
+  }, updateUserController);
 
-  routes.delete('/user/:id', () => {
+  routes.delete('/user/:id', (req, res, next) => {
     /**  #swagger.tags = ['Users']*/
+    next();
   }, deleteUserController);
 }

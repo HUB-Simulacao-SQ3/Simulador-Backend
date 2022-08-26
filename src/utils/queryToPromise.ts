@@ -1,5 +1,5 @@
 import { QueryOptions } from "mysql2";
-import { db_mysql } from "../config/my-sql.config";
+import { db_mysql } from "../config/database/my-sql.config";
 
 function QueryToAsync<T, K = any>(sql: string, values?: K): Promise<T> {
   return new Promise((resolve, reject) => {

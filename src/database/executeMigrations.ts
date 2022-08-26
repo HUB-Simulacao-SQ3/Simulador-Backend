@@ -1,9 +1,8 @@
 import fs from 'fs';
 import { readFileSync } from 'fs';
-import { db_mysql } from '../config/my-sql.config';
+import { db_mysql } from '../config/database/my-sql.config';
 
 const executeQueryAsync = async (data: string, fileName: string) => {
-  db_mysql.connect();
   return new Promise(resolve => {
     db_mysql.query(data, (err, result) => {
       if (err) throw Error(`Fail in db_mysql: ${fileName} \n` + err);

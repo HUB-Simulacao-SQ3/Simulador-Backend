@@ -15,4 +15,15 @@ var db_mysql = mysql.createConnection({
   supportBigNumbers: true
 });
 
+(() => {
+  db_mysql.connect((err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('The db is initialize 🎇');
+    }
+  });
+})()
+
+
 export { db_mysql }

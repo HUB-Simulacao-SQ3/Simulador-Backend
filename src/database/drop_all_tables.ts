@@ -1,4 +1,4 @@
-import { db_mysql } from "../config/my-sql.config";
+import { db_mysql } from "../config/database/my-sql.config";
 
 (async () => {
   db_mysql.connect();
