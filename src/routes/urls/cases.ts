@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { getAllCasesController, getAllCasesJoinController, getAllCasesIdJoinController, insertCaseController, updateCaseController, deleteCaseController } from '../../controllers/caseController/case';
+import { getAllCasesController, getAllCasesJoinController, getAllCasesIdJoinController, insertCaseController, updateCaseController, deleteCaseController } from '../../controllers/caseController';
 
 module.exports = (routes: Router) => {
   routes.get('/cases', (req, res, next) => {

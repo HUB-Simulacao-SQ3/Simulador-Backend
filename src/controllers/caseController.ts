@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { ICaseType, Case } from "../../models/case";
-import { CaseService } from "../../services/casesService";
+import { ICaseType, Case } from "../models/case";
+import { CaseService } from "../services/casesService";
 
 const getAllCasesController = async (req: Request, res: Response) => {
   const _case: Case[] = await CaseService.getAllCasesQuery();

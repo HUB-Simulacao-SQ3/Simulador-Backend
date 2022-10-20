@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { getAllMonitoringsController, insertMonitoringController, updateMonitoringController, deleteMonitoringController } from '../../controllers/monitoringController/monitoring';
+import { getAllMonitoringsController, insertMonitoringController, updateMonitoringController, deleteMonitoringController } from '../../controllers/monitoringController';
 
 module.exports = (routes: Router) => {
 

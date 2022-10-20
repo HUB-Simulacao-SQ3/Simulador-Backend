@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { getAllUsersController, insertUserController, updateUserController, deleteUserController } from '../../controllers/usersController/users';
+import { getAllUsersController, insertUserController, updateUserController, getUserController, deleteUserController } from '../../controllers/usersController';
 
 
 module.exports = (routes: Router) => {
@@ -12,7 +12,7 @@ module.exports = (routes: Router) => {
     */
     next();
   }, getAllUsersController);
-
+ 
   routes.post('/user', (req, res, next) => {
     /**  
       #swagger.tags = ['Users']
@@ -30,6 +30,18 @@ module.exports = (routes: Router) => {
     */
     next();
   }, updateUserController);
+
+  routes.get('/user/:id', (req, res, next) => {
+    /**  
+      #swagger.tags = ['User']
+      #swagger.description = 'Buscar user pelo id'
+      #swagger.responses[0] = {
+        schema: { $ref: '#/definitions/user' }
+      }
+    */
+    next();
+  }, getUserController);
+  
 
   routes.delete('/user/:id', (req, res, next) => {
     /**  #swagger.tags = ['Users']*/

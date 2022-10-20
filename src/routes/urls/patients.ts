@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { getAllPatientsController, insertPatientController, updatePatientController, deletePatientController } from '../../controllers/patientController/patients';
+import { getAllPatientsController, insertPatientController, updatePatientController, deletePatientController } from '../../controllers/patientsController';
 
 module.exports = (routes: Router) => {
 

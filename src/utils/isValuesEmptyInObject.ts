@@ -1,6 +1,6 @@
 
 function isValuesEmptyInObject<T = any>(_object: T, ignoreProperties?: string[]) {
-  const array = Object.keys(_object)?.filter(item => {
+  const array = Object.keys(_object as T)?.filter(item => {
     if(ignoreProperties?.find(value => item === value)) {
       return false;
     }

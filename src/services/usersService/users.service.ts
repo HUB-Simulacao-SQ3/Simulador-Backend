@@ -15,8 +15,12 @@ async function updateUserQuery(users: IUsersType): Promise<User[]> {
   return QueryToAsync<User[]>('UPDATE Users SET name = ?, email = ? WHERE id = ?', [name, email, id!]);
 };
 
+async function getUserQuery(id: string): Promise<User[]> {
+  return QueryToAsync<User[]>('SELECT * FROM Users WHERE id = ?', [id]);
+};
+
 async function deleteUserQuery(id: string): Promise<User[]> {
   return QueryToAsync<User[]>('DELETE FROM Users WHERE id = ?', [id]);
 };
 
-export { getAllUsersQuery, insertUserQuery, updateUserQuery, deleteUserQuery };
+export { getAllUsersQuery, insertUserQuery, updateUserQuery, getUserQuery, deleteUserQuery };

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { IQuizType, Quiz } from "../../models/quiz";
-import { QuizService } from "../../services/quizService";
+import { IQuizType, Quiz } from "../models/quiz";
+import { QuizService } from "../services/quizService";
 
 const getAllQuizsController = async (req: Request, res: Response) => {
   const quiz: Quiz[] = await QuizService.getAllQuizsQuery();

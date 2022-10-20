@@ -15,7 +15,7 @@ enum UsersTypeEnum {
 
 class User extends Entity<IUsersType> {
   private constructor(props: IUsersType, id?: string) {
-    super(props, id)
+    super(props, id);
   }
 
   static create(props: IUsersType, id?: string) {

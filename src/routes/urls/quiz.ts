@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAllQuizsController, getQuizCaseController, insertQuizController, updateQuizController, deleteQuizController } from "../../controllers/quizController/quiz";
+import { getAllQuizsController, getQuizCaseController, insertQuizController, updateQuizController, deleteQuizController } from "../../controllers/quizController";
 
 
 module.exports = (routes: Router) => {
@@ -11,7 +11,7 @@ module.exports = (routes: Router) => {
           schema: [ { $ref: '#/definitions/quizs' } ]
         }
       */
-      next();;
+      next();
     }, getAllQuizsController);
 
   routes.get('/quiz/case/:id',
@@ -23,7 +23,7 @@ module.exports = (routes: Router) => {
           schema: [ { $ref: '#/definitions/quizs' } ]
         }
       */
-      next();;
+      next();
     }, getQuizCaseController);
 
   routes.post('/quiz',

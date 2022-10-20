@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { IPatientsType, Patient } from "../../models/patient";
-import { PatientService } from "../../services/patientService/";
+import { IPatientsType, Patient } from "../models/patient";
+import { PatientService } from "../services/patientService/";
 
 const getAllPatientsController = async (req: Request, res: Response) => {
   const patient: Patient[] = await PatientService.getAllPatientsQuery();

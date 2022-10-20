@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { IMonitoringType, Monitoring } from "../../models/monitoring";
-import { MonitoringService } from "../../services/monitoringService";
+import { IMonitoringType, Monitoring } from "../models/monitoring";
+import { MonitoringService } from "../services/monitoringService";
 
 const getAllMonitoringsController = async (req: Request, res: Response) => {
   const Monitoring: Monitoring[] = await MonitoringService.getAllMonitoringsQuery();

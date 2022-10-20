@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { User, IUsersType } from "../../models/users";
-import { UserService } from "../../services/usersService";
+import { User, IUsersType } from "../models/users";
+import { UserService } from "../services/usersService";
 
 const getAllUsersController = async (req: Request, res: Response) => {
   const users: User[] = await UserService.getAllUsersQuery();
@@ -21,6 +21,11 @@ const updateUserController = async (req: Request, res: Response) => {
   return res.status(200).json(response);
 }
 
+const getUserController = async (req: Request, res: Response) => {
+  const response = await UserService.getUserQuery(req.params.id);
+  return res.status(200).json(response);
+}
+
 const deleteUserController = async (req: Request, res: Response) => {
   const { id } = req.params;
   const response = await UserService.deleteUserQuery(id);
@@ -31,5 +36,6 @@ export {
   getAllUsersController,
   insertUserController,
   updateUserController,
+  getUserController,
   deleteUserController
 };

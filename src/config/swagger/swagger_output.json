@@ -24,6 +24,9 @@
               "$ref": "#/definitions/cases"
             },
             "description": ""
+          },
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -47,6 +50,9 @@
               }
             },
             "description": ""
+          },
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -71,6 +77,9 @@
               "$ref": "#/definitions/casesJoin"
             },
             "description": ""
+          },
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -90,7 +99,11 @@
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       },
       "put": {
         "tags": [
@@ -106,7 +119,11 @@
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/case/{id}": {
@@ -123,7 +140,11 @@
             "type": "string"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/monitorings": {
@@ -139,6 +160,9 @@
               "$ref": "#/definitions/monitoring"
             },
             "description": ""
+          },
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -158,7 +182,11 @@
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       },
       "put": {
         "tags": [
@@ -174,7 +202,11 @@
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/monitoring/{id}": {
@@ -191,7 +223,11 @@
             "type": "string"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/patients": {
@@ -213,6 +249,9 @@
               }
             },
             "description": ""
+          },
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -232,7 +271,11 @@
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       },
       "put": {
         "tags": [
@@ -248,7 +291,11 @@
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/patient/{id}": {
@@ -265,7 +312,11 @@
             "type": "string"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/quizs": {
@@ -287,6 +338,9 @@
               }
             },
             "description": ""
+          },
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -317,6 +371,9 @@
               }
             },
             "description": ""
+          },
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -336,7 +393,11 @@
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       },
       "put": {
         "tags": [
@@ -352,7 +413,11 @@
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/quiz/{id}": {
@@ -369,7 +434,11 @@
             "type": "string"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/users": {
@@ -385,6 +454,9 @@
               "$ref": "#/definitions/user"
             },
             "description": ""
+          },
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -404,7 +476,11 @@
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       },
       "put": {
         "tags": [
@@ -420,10 +496,39 @@
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/user/{id}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "description": "Buscar user pelo id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "0": {
+            "schema": {
+              "$ref": "#/definitions/user"
+            },
+            "description": ""
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "delete": {
         "tags": [
           "Users"
@@ -437,7 +542,11 @@
             "type": "string"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     }
   },
