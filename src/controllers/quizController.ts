@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { IQuizType, Quiz } from "../models/quiz";
+import { IQuizType, Quiz } from "../models/Quiz";
 import { QuizService } from "../services/quizService";
 
 const getAllQuizsController = async (req: Request, res: Response) => {

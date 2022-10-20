@@ -1,4 +1,4 @@
-import { IUsersType, User } from "../../models/users";
+import { IUsersType, User } from "../../models/Users";
 import { QueryToAsync } from "../../utils/queryToPromise";
 
 async function getAllUsersQuery(): Promise<User[]> {

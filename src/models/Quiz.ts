@@ -1,5 +1,5 @@
 import { isValuesEmptyInObject } from "../utils/isValuesEmptyInObject";
-import { Entity } from "./entity";
+import { Entity } from "./Entity";
 
 enum QuizTypeEnum { 
   'initial_analysis', 'physic_exam', 'conducts', 'complement_exam'

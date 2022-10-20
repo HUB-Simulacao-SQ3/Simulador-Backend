@@ -1,4 +1,4 @@
-import { ICaseType, Case } from "../../models/case";
+import { ICaseType, Case } from "../../models/Case";
 import { QueryToAsync } from "../../utils/queryToPromise";
 
 async function getAllCasesQuery(): Promise<Case[]> {

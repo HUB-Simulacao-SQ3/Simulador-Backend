@@ -1,5 +1,5 @@
 import { isValuesEmptyInObject } from "../utils/isValuesEmptyInObject";
-import { Entity } from "./entity";
+import { Entity } from "./Entity";
 
 type IMonitoringType = {
   id?: string;

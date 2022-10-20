@@ -1,4 +1,4 @@
-import { IMonitoringType, Monitoring } from "../../models/monitoring";
+import { IMonitoringType, Monitoring } from "../../models/Monitoring";
 import { QueryToAsync } from "../../utils/queryToPromise";
 
 async function getAllMonitoringsQuery(): Promise<Monitoring[]> {

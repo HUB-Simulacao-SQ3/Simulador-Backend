@@ -1,4 +1,4 @@
-import { IPatientsType, Patient } from "../../models/patient";
+import { IPatientsType, Patient } from "../../models/Patient";
 import { QueryToAsync } from "../../utils/queryToPromise";
 
 async function getAllPatientsQuery(): Promise<Patient[]> {

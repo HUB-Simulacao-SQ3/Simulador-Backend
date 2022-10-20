@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { IPatientsType, Patient } from "../models/patient";
+import { IPatientsType, Patient } from "../models/Patient";
 import { PatientService } from "../services/patientService/";
 
 const getAllPatientsController = async (req: Request, res: Response) => {

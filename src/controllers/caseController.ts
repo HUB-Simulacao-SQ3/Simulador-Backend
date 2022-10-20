@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ICaseType, Case } from "../models/case";
+import { ICaseType, Case } from "../models/Case";
 import { CaseService } from "../services/casesService";
 
 const getAllCasesController = async (req: Request, res: Response) => {

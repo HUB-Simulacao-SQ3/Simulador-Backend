@@ -1,4 +1,4 @@
-import { IQuizType, Quiz } from "../../models/quiz";
+import { IQuizType, Quiz } from "../../models/Quiz";
 import { QueryToAsync } from "../../utils/queryToPromise";
 
 async function getAllQuizsQuery(): Promise<Quiz[]> {
