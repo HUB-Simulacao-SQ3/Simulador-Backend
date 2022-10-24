@@ -11,7 +11,7 @@ module.exports = (routes: Router) => {
           schema: [ { $ref: '#/definitions/quizs' } ]
         }
       */
-      next();;
+      next();
     }, getAllQuizsController);
 
   routes.get('/quiz/case/:id',
@@ -23,7 +23,7 @@ module.exports = (routes: Router) => {
           schema: [ { $ref: '#/definitions/quizs' } ]
         }
       */
-      next();;
+      next();
     }, getQuizCaseController);
 
   routes.post('/quiz',
@@ -46,7 +46,7 @@ module.exports = (routes: Router) => {
         }
       */
     next();
-  }, updateQuizController);
+  }, getAllQuizsController);
 
   routes.delete('/quiz/:id', (req, res, next) => {
     /**  

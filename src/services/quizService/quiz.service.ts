@@ -16,11 +16,19 @@ async function insertQuizQuery(_quiz: IQuizType): Promise<Quiz> {
     [case_id, type, question, response, file!]);
 };
 
-async function updateQuizQuery(_quiz: IQuizType): Promise<Quiz> {
+async function updateQuizQuery(_quiz: IQuizType) {
   const { type, question, response, file, id } = _quiz;
-  return QueryToAsync<Quiz>(
-    `UPDATE Quiz SET type = ?, question = ?, response = ? ${file ? ', file = ?' : ''} WHERE id = ?`
-    , [type, question, response, file ?? id!]);
+  console.log(_quiz);
+  if (file!) {
+    return QueryToAsync<Quiz>(
+      `UPDATE Quiz SET type = ?, question = ?, response = ?, file = ? WHERE id = ?`
+      , [type, question, response, file, id]);
+  } else {
+    return QueryToAsync<Quiz>(
+      `UPDATE Quiz SET type = ?, question = ?, response = ? WHERE id = ?`
+      , [type, question, response, id]);
+
+  }
 };
 
 async function deleteQuizQuery(id: string): Promise<Quiz[]> {
