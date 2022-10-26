@@ -7,10 +7,11 @@ type IUsersType = {
   image?: string;
   type: UsersTypeEnum;
   email: string;
+  password:string;
 }
 
 enum UsersTypeEnum { 
-  'admin', 'user', 'teacher'
+  'admin', 'student', 'teacher'
 }
 
 class User extends Entity<IUsersType> {

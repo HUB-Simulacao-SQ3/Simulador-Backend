@@ -8,15 +8,15 @@ const getAllUsersController = async (req: Request, res: Response) => {
 }
 
 const insertUserController = async (req: Request, res: Response) => {
-  const { email, type, name }: IUsersType = req.body;
-  const users = User.create({ email, type, name });
+  const { email, type, name, password }: IUsersType = req.body;
+  const users = User.create({password, email, type, name });
   const response = await UserService.insertUserQuery(users);
   return res.status(200).json(response);
 }
 
 const updateUserController = async (req: Request, res: Response) => {
-  const { id, email, type, name }: IUsersType = req.body;
-  const users = User.create({ email, type, name }, id);
+  const { id, email, type, name, password }: IUsersType = req.body;
+  const users = User.create({ email, type, name, password }, id);
   const response = await UserService.updateUserQuery(users);
   return res.status(200).json(response);
 }
