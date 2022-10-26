@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { readFileSync } from 'fs';
+import path from 'path';
 import { db_mysql } from '../config/database/my-sql.config';
 
 const executeQueryAsync = async (data: string, fileName: string) => {
@@ -32,3 +33,4 @@ fs.readdir(__dirname + '/migrations', async (err, files) => {
   console.timeEnd('Execute in: ');
 });
 
+export { executeQueryAsync }
