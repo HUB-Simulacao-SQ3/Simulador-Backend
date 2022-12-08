@@ -1,0 +1,902 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "REST API",
+        "description": ""
+    },
+    "host": "localhost:3002",
+    "basePath": "/",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/cases": {
+            "get": {
+                "tags": [
+                    "Cases"
+                ],
+                "description": "Listagem de todos os casos",
+                "parameters": [],
+                "responses": {
+                    "0": {
+                        "schema": {
+                            "$ref": "#/definitions/cases"
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/cases/all/": {
+            "get": {
+                "tags": [
+                    "Cases"
+                ],
+                "description": "Listagem de todos os casos com seus devidos relacionamentos",
+                "parameters": [],
+                "responses": {
+                    "0": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/casesJoin"
+                            },
+                            "xml": {
+                                "name": "main"
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/cases/all/{id}": {
+            "get": {
+                "tags": [
+                    "Cases"
+                ],
+                "description": "Caso completo com seus relacionamentos, filtrando pelo seu id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "0": {
+                        "schema": {
+                            "$ref": "#/definitions/casesJoin"
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/case": {
+            "post": {
+                "tags": [
+                    "Cases"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "case",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/caseInsert"
+                        }
+                    }
+                ],
+                "responses": {}
+            },
+            "put": {
+                "tags": [
+                    "Cases"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "case",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/caseUpdate"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/case/{id}": {
+            "delete": {
+                "tags": [
+                    "Cases"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/monitorings": {
+            "get": {
+                "tags": [
+                    "Monitoring"
+                ],
+                "description": "Listagem de todas as monitorizações",
+                "parameters": [],
+                "responses": {
+                    "0": {
+                        "schema": {
+                            "$ref": "#/definitions/monitoring"
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/monitoring": {
+            "post": {
+                "tags": [
+                    "Monitoring"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "monitoring",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/monitoringInsert"
+                        }
+                    }
+                ],
+                "responses": {}
+            },
+            "put": {
+                "tags": [
+                    "Monitoring"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "monitoring",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/monitoringUpdate"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/monitoring/{id}": {
+            "delete": {
+                "tags": [
+                    "Monitoring"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/patients": {
+            "get": {
+                "tags": [
+                    "Patients"
+                ],
+                "description": "Listagem de todos pacientes",
+                "parameters": [],
+                "responses": {
+                    "0": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/patients"
+                            },
+                            "xml": {
+                                "name": "main"
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/patient": {
+            "post": {
+                "tags": [
+                    "Patients"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "patients",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/patientInsert"
+                        }
+                    }
+                ],
+                "responses": {}
+            },
+            "put": {
+                "tags": [
+                    "Patients"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "patients",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/patientUpdate"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/patient/{id}": {
+            "delete": {
+                "tags": [
+                    "Patients"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/quizs": {
+            "get": {
+                "tags": [
+                    "Quizs"
+                ],
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "0": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/quizs"
+                            },
+                            "xml": {
+                                "name": "main"
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/quiz/case/{id}": {
+            "get": {
+                "tags": [
+                    "Quizs"
+                ],
+                "description": "Buscar quiz pelo id do caso",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "0": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/quizs"
+                            },
+                            "xml": {
+                                "name": "main"
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/quiz": {
+            "post": {
+                "tags": [
+                    "Quizs"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "quiz",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/quizInsert"
+                        }
+                    }
+                ],
+                "responses": {}
+            },
+            "put": {
+                "tags": [
+                    "Quizs"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "quiz",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/quizUpdate"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/quiz/{id}": {
+            "delete": {
+                "tags": [
+                    "Quizs"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/users": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "0": {
+                        "schema": {
+                            "$ref": "#/definitions/user"
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/user": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/user"
+                        }
+                    }
+                ],
+                "responses": {}
+            },
+            "put": {
+                "tags": [
+                    "Users"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/userUpdate"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/user/{id}": {
+            "delete": {
+                "tags": [
+                    "Users"
+                ],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    },
+    "definitions": {
+        "user": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "example": "string"
+                },
+                "name": {
+                    "type": "string",
+                    "example": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "example": "UsersTypeEnum"
+                },
+                "id": {
+                    "type": "string",
+                    "example": "number"
+                },
+                "image": {
+                    "type": "string",
+                    "example": "string"
+                }
+            }
+        },
+        "userUpdate": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "example": "string"
+                },
+                "name": {
+                    "type": "string",
+                    "example": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "example": "UsersTypeEnum"
+                },
+                "image": {
+                    "type": "string",
+                    "example": "string"
+                }
+            }
+        },
+        "cases": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "example": "3428b9ba-2424-11ed-b9c4-448a5b2c2d83"
+                    },
+                    "title": {
+                        "type": "string",
+                        "example": "Dor de barriga"
+                    },
+                    "description": {
+                        "type": "string",
+                        "example": "Um paciente chega com muita dor de barriga"
+                    },
+                    "scenery": {
+                        "type": "string",
+                        "example": "hospital"
+                    },
+                    "patient_id": {
+                        "type": "string",
+                        "example": "22ff7ccf-228c-11ed-9e3c-448a5b2c2d83"
+                    },
+                    "monitoring_id": {
+                        "type": "string",
+                        "example": "baacaa53-2276-11ed-9e3c-448a5b2c2d83"
+                    },
+                    "users_id": {
+                        "type": "string",
+                        "example": "6cb74180-aaaa-4e4b-99f0-77f391ff41f1"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "example": "2022-08-25T06:15:43.000Z"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "example": "2022-08-25T06:15:43.000Z"
+                    }
+                }
+            }
+        },
+        "casesJoin": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "example": "22ff7ccf-228c-11ed-9e3c-448a5b2c2d83"
+                },
+                "title": {
+                    "type": "string",
+                    "example": "Dor nas costas"
+                },
+                "description": {
+                    "type": "string",
+                    "example": "Um paciente chega com muita dor na costas"
+                },
+                "scenery": {
+                    "type": "string",
+                    "example": "hospital"
+                },
+                "patient_id": {
+                    "type": "string",
+                    "example": "22ff7ccf-228c-11ed-9e3c-448a5b2c2d83"
+                },
+                "monitoring_id": {
+                    "type": "string",
+                    "example": "baacaa53-2276-11ed-9e3c-448a5b2c2d83"
+                },
+                "users_id": {
+                    "type": "string",
+                    "example": "6cb74180-aaaa-4e4b-99f0-77f391ff41f1"
+                },
+                "created_at": {
+                    "type": "string",
+                    "example": "2022-08-23T05:34:39.000Z"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "example": "2022-08-23T05:34:39.000Z"
+                },
+                "temperature": {
+                    "type": "number",
+                    "example": 22
+                },
+                "pressure": {
+                    "type": "number",
+                    "example": 20
+                },
+                "name": {
+                    "type": "string",
+                    "example": "José Pereira Santos"
+                },
+                "chief_complaint": {
+                    "type": "string",
+                    "example": "Dor nos olhos"
+                },
+                "professional": {
+                    "type": "string",
+                    "example": "Programador"
+                },
+                "age": {
+                    "type": "number",
+                    "example": 32
+                },
+                "weight": {
+                    "type": "number",
+                    "example": 44
+                },
+                "imc": {
+                    "type": "number",
+                    "example": 62
+                }
+            }
+        },
+        "caseUpdate": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "example": "b97ed6e8-228c-11ed-9e3c-448a5b2c2d83"
+                },
+                "title": {
+                    "type": "string",
+                    "example": "Dor nas costas"
+                },
+                "description": {
+                    "type": "string",
+                    "example": "Um paciente chega com muita dor na costas"
+                },
+                "scenery": {
+                    "type": "string",
+                    "example": "hospital"
+                }
+            }
+        },
+        "caseInsert": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "example": "Dor de barriga"
+                },
+                "description": {
+                    "type": "string",
+                    "example": "Um paciente chega com muita dor de barriga"
+                },
+                "scenery": {
+                    "type": "string",
+                    "example": "hospital"
+                },
+                "patient_id": {
+                    "type": "string",
+                    "example": "22ff7ccf-228c-11ed-9e3c-448a5b2c2d83"
+                },
+                "monitoring_id": {
+                    "type": "string",
+                    "example": "baacaa53-2276-11ed-9e3c-448a5b2c2d83"
+                },
+                "users_id": {
+                    "type": "string",
+                    "example": "6cb74180-aaaa-4e4b-99f0-77f391ff41f1"
+                }
+            }
+        },
+        "monitoring": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "example": "baacaa53-2276-11ed-9e3c-448a5b2c2d83"
+                },
+                "temperature": {
+                    "type": "number",
+                    "example": 22
+                },
+                "pressure": {
+                    "type": "number",
+                    "example": 20
+                },
+                "created_at": {
+                    "type": "string",
+                    "example": "2022-08-23T03:01:25.000Z"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "example": "2022-08-23T03:04:45.000Z"
+                }
+            }
+        },
+        "monitoringInsert": {
+            "type": "object",
+            "properties": {
+                "temperature": {
+                    "type": "number",
+                    "example": 22
+                },
+                "pressure": {
+                    "type": "number",
+                    "example": 34
+                }
+            }
+        },
+        "monitoringUpdate": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "example": "baacaa53-2276-11ed-9e3c-448a5b2c2d83"
+                },
+                "pressure": {
+                    "type": "number",
+                    "example": 20
+                },
+                "temperature": {
+                    "type": "number",
+                    "example": 22
+                }
+            }
+        },
+        "patients": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "example": "22ff7ccf-228c-11ed-9e3c-448a5b2c2d83"
+                },
+                "name": {
+                    "type": "string",
+                    "example": "José Pereira Santos"
+                },
+                "chief_complaint": {
+                    "type": "string",
+                    "example": "Dor nos olhos"
+                },
+                "professional": {
+                    "type": "string",
+                    "example": "Programador"
+                },
+                "age": {
+                    "type": "number",
+                    "example": 32
+                },
+                "weight": {
+                    "type": "number",
+                    "example": 44
+                },
+                "imc": {
+                    "type": "number",
+                    "example": 62
+                },
+                "created_at": {
+                    "type": "string",
+                    "example": "2022-08-23T05:34:39.000Z"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "example": "2022-08-23T05:34:39.000Z"
+                }
+            }
+        },
+        "patientInsert": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "example": "José Pereira Santos"
+                },
+                "chief_complaint": {
+                    "type": "string",
+                    "example": "Dor nos olhos"
+                },
+                "professional": {
+                    "type": "string",
+                    "example": "Programador"
+                },
+                "age": {
+                    "type": "number",
+                    "example": 32
+                },
+                "weight": {
+                    "type": "number",
+                    "example": 44
+                },
+                "imc": {
+                    "type": "number",
+                    "example": 62
+                }
+            }
+        },
+        "patientUpdate": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "example": "abc85ac2-2258-11ed-9e3c-448a5b2c2d83"
+                },
+                "name": {
+                    "type": "string",
+                    "example": "José Pereira Santos"
+                },
+                "chief_complaint": {
+                    "type": "string",
+                    "example": "Dor nas costas"
+                },
+                "professional": {
+                    "type": "string",
+                    "example": "Programador"
+                },
+                "age": {
+                    "type": "number",
+                    "example": 32
+                },
+                "weight": {
+                    "type": "number",
+                    "example": 44
+                },
+                "imc": {
+                    "type": "number",
+                    "example": 62
+                }
+            }
+        },
+        "quizs": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "example": "159004fa-2424-11ed-b9c4-448a5b2c2d83"
+                },
+                "case_id": {
+                    "type": "string",
+                    "example": "b97ed6e8-228c-11ed-9e3c-448a5b2c2d83"
+                },
+                "type": {
+                    "type": "string",
+                    "example": "physic_exam"
+                },
+                "question": {
+                    "type": "string",
+                    "example": "Tirar exeme de sangue ?"
+                },
+                "response": {
+                    "type": "string",
+                    "example": "Qual é a resposta"
+                },
+                "file": {},
+                "created_at": {
+                    "type": "string",
+                    "example": "2022-08-25T06:14:51.000Z"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "example": "2022-08-25T06:14:51.000Z"
+                }
+            }
+        },
+        "quizInsert": {
+            "type": "object",
+            "properties": {
+                "case_id": {
+                    "type": "string",
+                    "example": "b97ed6e8-228c-11ed-9e3c-448a5b2c2d83"
+                },
+                "type": {
+                    "type": "string",
+                    "example": "physic_exam"
+                },
+                "question": {
+                    "type": "string",
+                    "example": "Tirar exeme de sangue ?"
+                },
+                "response": {
+                    "type": "string",
+                    "example": "Qual é a resposta"
+                },
+                "file": {
+                    "type": "string",
+                    "example": ""
+                }
+            }
+        },
+        "quizUpdate": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "example": "31489300-23a3-11ed-9e3c-448a5b2c2d83"
+                },
+                "case_id": {
+                    "type": "string",
+                    "example": "b97ed6e8-228c-11ed-9e3c-448a5b2c2d83"
+                },
+                "type": {
+                    "type": "string",
+                    "example": "initial_analysis"
+                },
+                "question": {
+                    "type": "string",
+                    "example": "Quando começou os sintomas?"
+                },
+                "response": {
+                    "type": "string",
+                    "example": "A 9 dias atrás"
+                },
+                "file": {}
+            }
+        }
+    }
+}
