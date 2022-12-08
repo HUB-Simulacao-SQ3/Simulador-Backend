@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { getAllUsersController, insertUserController, updateUserController, deleteUserController } from '../../controllers/usersController/users';
+import { getAllUsersController, insertUserController, updateUserController, deleteUserController, loginController } from '../../controllers/usersController/users';
 
 
 module.exports = (routes: Router) => {
@@ -12,6 +12,16 @@ module.exports = (routes: Router) => {
     */
     next();
   }, getAllUsersController);
+
+  routes.post('/login', (req, res, next) => {
+    /**  
+      #swagger.tags = ['Users']
+      #swagger.responses[0] = {
+        schema: { $ref: '#/definitions/user' }
+      }
+    */
+    next();
+  }, loginController);
 
   routes.post('/user', (req, res, next) => {
     /**  

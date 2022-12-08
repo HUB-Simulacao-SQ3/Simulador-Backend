@@ -1,11 +1,12 @@
-import { getAllUsersQuery, insertUserQuery, updateUserQuery, deleteUserQuery } from "./users.service"
+import { getAllUsersQuery, insertUserQuery, updateUserQuery, deleteUserQuery, getUserLoginQuery } from "./users.service"
 
 
-const UserService = { 
+const UserService = {
   getAllUsersQuery,
   insertUserQuery,
   updateUserQuery,
-  deleteUserQuery
+  deleteUserQuery,
+  getUserLoginQuery
 }
 
 export { UserService }

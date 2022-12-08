@@ -23,7 +23,7 @@ fs.readdir(__dirname + '/migrations', async (err, files) => {
       executeQueryAsync(
         readFileSync(`${__dirname}/migrations/${fileName}`, { encoding: 'utf-8' }),
         fileName
-      ))
+      ) as never)
   };
   const result = await Promise.all(listOfPromises);
   const errInMigration = result.filter(_ => _ === undefined).length > 0;

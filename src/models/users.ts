@@ -3,13 +3,14 @@ import { Entity } from "./entity";
 
 type IUsersType = {
   id?: string;
-  name: string;
+  name?: string;
   image?: string;
-  type: UsersTypeEnum;
-  email: string;
+  type?: UsersTypeEnum;
+  email?: string;
+  password?: string;
 }
 
-enum UsersTypeEnum { 
+enum UsersTypeEnum {
   'admin', 'user', 'teacher'
 }
 
@@ -19,7 +20,7 @@ class User extends Entity<IUsersType> {
   }
 
   static create(props: IUsersType, id?: string) {
-    const isEmpty =  isValuesEmptyInObject(props, ['id', 'image']);
+    const isEmpty = isValuesEmptyInObject(props, ['id', 'image']);
     if (isEmpty.isNull) throw new Error(`Values ​​cannot be empty: ${isEmpty.values.join(' ')}`);
     const user = new User(props, id).props;
     return user;
