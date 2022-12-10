@@ -18,7 +18,6 @@ async function insertQuizQuery(_quiz: IQuizType): Promise<Quiz> {
 
 async function updateQuizQuery(_quiz: IQuizType) {
   const { type, question, response, file, id } = _quiz;
-  console.log(_quiz);
   if (file!) {
     return QueryToAsync<Quiz>(
       `UPDATE Quiz SET type = ?, question = ?, response = ?, file = ? WHERE id = ?`

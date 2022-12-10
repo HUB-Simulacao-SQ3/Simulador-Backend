@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { getAllCasesController, getAllCasesJoinController, getAllCasesIdJoinController, insertCaseController, updateCaseController, deleteCaseController } from '../../controllers/caseController/case';
+import { middlewareJWT } from '../../token';
 
 module.exports = (routes: Router) => {
   routes.get('/cases', (req, res, next) => {
@@ -11,7 +12,7 @@ module.exports = (routes: Router) => {
     }
   */
     next();
-  }, getAllCasesController);
+  }, middlewareJWT, getAllCasesController);
 
   routes.get('/cases/all/',
     (req, res, next) => {
@@ -36,8 +37,7 @@ module.exports = (routes: Router) => {
           }
         */
       next();
-    }
-    , getAllCasesIdJoinController);
+    }, getAllCasesIdJoinController);
 
   routes.post('/case',
     (req, res, next) => {

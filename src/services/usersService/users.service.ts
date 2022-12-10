@@ -7,7 +7,6 @@ async function getAllUsersQuery(): Promise<User[]> {
 
 async function getUserLoginQuery(users: IUsersType): Promise<IUsersType[]> {
   const { password, email } = users;
-  console.log('select * from Users WHERE email = ? password = ? ', [email, password])
   return QueryToAsync<IUsersType[]>('select * from Users WHERE email = ? AND password = ? ', [email, password]);
 };
 

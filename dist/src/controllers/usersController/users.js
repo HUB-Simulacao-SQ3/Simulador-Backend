@@ -36,7 +36,7 @@ const loginController = async (req, res) => {
     if ((response === null || response === void 0 ? void 0 : response.length) > 0) {
         delete response[0].password;
         const jwt = (0, token_1.createToken)(response[0]);
-        return res.status(200).json(new response_1.ResponseModel(jwt, true, ['']));
+        return res.status(200).json(new response_1.ResponseModel({ jwt }, true, ['']));
     }
     else {
         return res.status(200).json(new response_1.ResponseModel({}, true, ['Email ou senha incorreto']));
