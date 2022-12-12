@@ -1,5 +1,6 @@
 CREATE TABLE IF NOT EXISTS `Cases` (
   `id` VARCHAR(36) PRIMARY KEY NOT NULL DEFAULT (uuid()),
+  `case_id` VARCHAR(36) NOT NULL DEFAULT (uuid()),
   `title` VARCHAR(255) NOT NULL,
   `description` VARCHAR(255) NOT NULL,
   `scenery` VARCHAR(255) NOT NULL,

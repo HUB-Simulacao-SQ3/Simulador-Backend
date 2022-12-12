@@ -1,4 +1,4 @@
-import { getAllCasesQuery, insertCaseQuery, updateCaseQuery, deleteCaseQuery, getAllCasesQueryJoin, getAllCasesIdQueryJoin } from "./case.service"
+import { getAllCasesQuery, insertCaseQuery, updateCaseQuery, deleteCaseQuery, getAllCasesQueryJoin, getAllCasesIdQueryJoin, getCaseByCaseIdQuery } from "./case.service"
 
 
 const CaseService = {
@@ -7,6 +7,7 @@ const CaseService = {
   updateCaseQuery,
   deleteCaseQuery,
   getAllCasesQueryJoin,
+  getCaseByCaseIdQuery,
   getAllCasesIdQueryJoin
 }
 

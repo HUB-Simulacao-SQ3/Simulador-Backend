@@ -9,23 +9,25 @@ async function getAllQuizCaseQuery(caseId: string): Promise<Quiz[]> {
   return QueryToAsync<Quiz[]>('SELECT * FROM Quiz WHERE case_id = ?', [caseId]);
 };
 
-async function insertQuizQuery(_quiz: IQuizType): Promise<Quiz> {
-  const { case_id, type, question, response, file } = _quiz;
-  return QueryToAsync<Quiz>(
-    `INSERT INTO Quiz (case_id, type, question, response ${file ? ',' + file : ''}) VALUES (?, ?, ?, ? ${file ? ', ?' : ''});`,
-    [case_id, type, question, response, file!]);
+async function insertQuizQuery(_quiz: IQuizType): Promise<any> {
+  const { case_id, type, question, alternativeCorrect, alternative1, alternative2, alternative3, alternative4, rollbackQuiz, quiz_id, file } = _quiz;
+  return QueryToAsync<any>(
+    `INSERT INTO Quiz 
+      (case_id, type, question, alternativeCorrect, alternative1, alternative2, alternative3, alternative4, rollbackQuiz, quiz_id ${file ? ',' + file : ''}) 
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ? ${file ? ', ?' : ''});`,
+    [case_id, type, question, alternativeCorrect, alternative1, alternative2, alternative3, alternative4, rollbackQuiz, quiz_id, file!]);
 };
 
 async function updateQuizQuery(_quiz: IQuizType) {
-  const { type, question, response, file, id } = _quiz;
+  const { type, question, alternativeCorrect, file, id } = _quiz;
   if (file!) {
     return QueryToAsync<Quiz>(
-      `UPDATE Quiz SET type = ?, question = ?, response = ?, file = ? WHERE id = ?`
-      , [type, question, response, file, id]);
+      `UPDATE Quiz SET type = ?, question = ?, alternativeCorrect = ?, file = ? WHERE id = ?`
+      , [type, question, alternativeCorrect, file, id]);
   } else {
     return QueryToAsync<Quiz>(
-      `UPDATE Quiz SET type = ?, question = ?, response = ? WHERE id = ?`
-      , [type, question, response, id]);
+      `UPDATE Quiz SET type = ?, question = ?, alternativeCorrect = ? WHERE id = ?`
+      , [type, question, alternativeCorrect, id]);
 
   }
 };

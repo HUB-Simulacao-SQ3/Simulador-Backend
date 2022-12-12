@@ -1,20 +1,29 @@
 import { isValuesEmptyInObject } from "../utils/isValuesEmptyInObject";
 import { Entity } from "./entity";
 
-enum QuizTypeEnum { 
+enum QuizTypeEnum {
   'initial_analysis', 'physic_exam', 'conducts', 'complement_exam'
 }
 
+interface IAlternatives {
+  text: string;
+}
 
 type IQuizType = {
   id: string;
-  case_id: string;
+  quiz_id: string;
+  case_id?: string;
   type: QuizTypeEnum;
   question: string;
-  response: string;
-  file?: Blob;
-  created_at: Date;
-  updated_at: Date;
+  file: any;
+  alternatives: IAlternatives[];
+  alternative1: string;
+  alternative2: string;
+  alternative3: string;
+  alternative4: string;
+  alternativeCorrect: number;
+  rollbackQuiz: string[];
+  justification?: string;
 }
 
 class Quiz extends Entity<IQuizType> {
@@ -24,7 +33,7 @@ class Quiz extends Entity<IQuizType> {
 
   static create(props: IQuizType, id?: string) {
     const isEmpty = isValuesEmptyInObject(props, ['id', 'file']);
-    if(isEmpty.isNull) throw new Error(`Values ​​cannot be empty: ${isEmpty.values.join(' ')}`);
+    if (isEmpty.isNull) throw new Error(`Values ​​cannot be empty: ${isEmpty.values.join(' ')}`);
     const quiz = new Quiz(props, id).props;
     return quiz;
   }
